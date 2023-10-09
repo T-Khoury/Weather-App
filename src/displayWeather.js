@@ -59,48 +59,48 @@ function displayWeather(apiData) {
             locationRegion.textContent = data.currentWeather.location.region;
             locationCountry.textContent = data.currentWeather.location.country;
 
-            currentTemp.textContent = data.currentWeather.temperature;
+            currentTemp.textContent = `${data.currentWeather.temperature}°F`;
             currentIcon.src = data.currentWeather.icon;
             currentCondition.textContent = data.currentWeather.condition;
             todayRainChance.textContent = data.currentWeather.percipitation;
 
-            todayFeelsLike.textContent = data.currentWeather.feelslike;
+            todayFeelsLike.textContent = `${data.currentWeather.feelslike}°F`;
             todayHumidity.textContent = data.currentWeather.humidity;
             todayUV.textContent = data.currentWeather.uv;
             todayWind.textContent = data.currentWeather.windspeed;
 
             today12AMIcon.src = data.currentWeather.forecast[0].icon;
-            today12AMTemp.textContent = data.currentWeather.forecast[0].temperature;
+            today12AMTemp.textContent = `${data.currentWeather.forecast[0].temperature}°F`;
             today3AMIcon.src = data.currentWeather.forecast[3].icon;
-            today3AMTemp.textContent = data.currentWeather.forecast[3].temperature;
+            today3AMTemp.textContent = `${data.currentWeather.forecast[3].temperature}°F`;
             today6AMIcon.src = data.currentWeather.forecast[6].icon;
-            today6AMTemp.textContent = data.currentWeather.forecast[6].temperature;
+            today6AMTemp.textContent = `${data.currentWeather.forecast[6].temperature}°F`;
             today9AMIcon.src = data.currentWeather.forecast[9].icon;
-            today9AMTemp.textContent = data.currentWeather.forecast[9].temperature;
+            today9AMTemp.textContent = `${data.currentWeather.forecast[9].temperature}°F`;
             today12PMIcon.src = data.currentWeather.forecast[12].icon;
-            today12PMTemp.textContent = data.currentWeather.forecast[12].temperature;
+            today12PMTemp.textContent = `${data.currentWeather.forecast[12].temperature}°F`;
             today3PMIcon.src = data.currentWeather.forecast[15].icon;
-            today3PMTemp.textContent = data.currentWeather.forecast[15].temperature;
+            today3PMTemp.textContent = `${data.currentWeather.forecast[15].temperature}°F`;
             today6PMIcon.src = data.currentWeather.forecast[18].icon;
-            today6PMTemp.textContent = data.currentWeather.forecast[18].temperature;
+            today6PMTemp.textContent = `${data.currentWeather.forecast[18].temperature}°F`;
             today9PMIcon.src = data.currentWeather.forecast[21].icon;
-            today9PMTemp.textContent = data.currentWeather.forecast[21].temperature;
+            today9PMTemp.textContent = `${data.currentWeather.forecast[21].temperature}°F`;
 
             tomorrowDate.textContent = data.tomorrowWeather.data;
             tomorrowIcon.src = data.tomorrowWeather.icon;
             tomorrowCondition.textContent = data.tomorrowWeather.condition;
-            tomorrowTemp.textContent = data.tomorrowWeather.avgTemperature;
+            tomorrowTemp.textContent = `${data.tomorrowWeather.avgTemperature}°F`;
             tomorrowRain.textContent = data.tomorrowWeather.percipitation;
-            tomorrowHigh.textContent = data.tomorrowWeather.maxTemperature;
-            tomorrowLow.textContent = data.tomorrowWeather.minTemperature;
+            tomorrowHigh.textContent = `${data.tomorrowWeather.maxTemperature}°F`;
+            tomorrowLow.textContent = `${data.tomorrowWeather.minTemperature}°F`;
 
             dayAfterTmrwDate.textContent = data.dayAfterTomorrowWeather.date;
             dayAfterTmrwIcon.src = data.dayAfterTomorrowWeather.icon;
             dayAfterTmrwCondition.textContent = data.dayAfterTomorrowWeather.condition;
-            dayAfterTmrwTemp.textContent = data.dayAfterTomorrowWeather.avgTemperature;
+            dayAfterTmrwTemp.textContent = `${data.dayAfterTomorrowWeather.avgTemperature}°F`;
             dayAfterTmrwRain.textContent = data.dayAfterTomorrowWeather.percipitation;
-            dayAfterTmrwHigh.textContent = data.dayAfterTomorrowWeather.maxTemperature;
-            dayAfterTmrwLow.textContent = data.dayAfterTomorrowWeather.minTemperature;
+            dayAfterTmrwHigh.textContent = `${data.dayAfterTomorrowWeather.maxTemperature}°F`;
+            dayAfterTmrwLow.textContent = `${data.dayAfterTomorrowWeather.minTemperature}°F`;
 
         });
 

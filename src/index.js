@@ -6,3 +6,11 @@ import './styles.css';
 
 weatherDisplayContainer();
 formHandler();
+
+
+function tester() {
+    getWeatherData('Tampa')
+        .then(displayWeather)
+};
+
+tester();

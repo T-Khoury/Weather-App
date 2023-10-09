@@ -1,7 +1,13 @@
 
+@font-face {
+    font-family: 'Young Serif';
+    src: url(./assets/YoungSerif-Regular.ttf)
+}
+
 body {
     background: url('./assets/noaa-kcvlb727mn8-unsplash.jpg') no-repeat center fixed;
     background-size: cover;
+    font-family: 'Young Serif';
 }
 
 #content {
@@ -28,15 +34,29 @@ body {
     justify-content: space-between;
 }
 
+#today-location-conditions, #today-other-info {
+    height: 100%;
+    width: 50%;
+}
+
+
+#today-top-container {
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
 #today-weather {
     grid-area: today;
     border: 1px solid black;
+    backdrop-filter: blur(10px);
 }
 
 
 #tomorrow-weather {
     grid-area: tomorrow;
     border: 1px solid black;
+    
 }
 
 #dayAfter-weather {
