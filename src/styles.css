@@ -1,0 +1,47 @@
+
+body {
+    background: url('./assets/noaa-kcvlb727mn8-unsplash.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+#content {
+    display: grid;
+    grid-template-rows: 5% 45% 5% 45%;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-areas: 
+        "search search search"
+        "today today today"
+        "weathergap weathergap weathergap"
+        "tomorrow gap dayafter";
+    height: 80vh;
+    width: 75vw;
+    margin: auto;
+}
+
+#input-container {
+    text-align: center;
+    grid-area: search;
+}
+
+#today-hourly-forecast {
+    display: flex;
+    justify-content: space-between;
+}
+
+#today-weather {
+    grid-area: today;
+    border: 1px solid black;
+}
+
+
+#tomorrow-weather {
+    grid-area: tomorrow;
+    border: 1px solid black;
+}
+
+#dayAfter-weather {
+    grid-area: dayafter;
+    border: 1px solid black;
+}
+
+
