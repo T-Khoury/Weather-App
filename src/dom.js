@@ -47,9 +47,7 @@ function weatherDisplayContainer() {
     currentIcon.setAttribute('id', 'current-icon');
     const currentCondition = document.createElement('p');
     currentCondition.setAttribute('id', 'current-condition');
-    const todayRainChance = document.createElement('p');
-    todayRainChance.setAttribute('id', 'today-rain');
-    todayConditions.append(currentTemp, currentIcon, currentCondition, todayRainChance);
+    todayConditions.append(currentTemp, currentIcon, currentCondition);
 
     todayLocationandConditions.append(todayLocation, todayConditions);
 
@@ -63,7 +61,9 @@ function weatherDisplayContainer() {
     todayUV.setAttribute('id', 'today-uv');
     const todayWind = document.createElement('p');
     todayWind.setAttribute('id', 'today-wind');
-    todayWeatherOtherInfo.append(todayFeelsLike, todayHumidity, todayUV, todayWind);
+    const todayRainChance = document.createElement('p');
+    todayRainChance.setAttribute('id', 'today-rain');
+    todayWeatherOtherInfo.append(todayFeelsLike, todayRainChance, todayHumidity, todayUV, todayWind);
 
 
     todayWeatherTopContainer.append(todayLocationandConditions, todayWeatherOtherInfo)
@@ -76,8 +76,19 @@ function weatherDisplayContainer() {
         const todayHourWeather = document.createElement('div');
         todayHourWeather.setAttribute('class', 'todayHour');
         todayHourWeather.dataset.hour = i;
-        const todayHourNumber = document.createElement('p');
-        todayHourNumber.textContent = `${counter}`;
+        const todayHourNumber = document.createElement('p'); 
+        switch (todayHourWeather.dataset.hour) {
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+                todayHourNumber.textContent = `${counter}AM`;
+                break;
+            default: 
+                todayHourNumber.textContent = `${counter}PM`;
+                break;
+        }
+        
         if (counter === 12) {
             counter = 3;
         } else {
@@ -112,7 +123,7 @@ function weatherDisplayContainer() {
     const tomorrowRain = document.createElement('p');
     tomorrowRain.setAttribute('class', 'tmrw-dayafter-rain');
 
-    tomorrowTopContainer.append(tomorrowDate, tomorrowIcon, tomorrowAvgTemp, tomorrowRain);
+    tomorrowTopContainer.append(tomorrowDate, tomorrowIcon, tomorrowCondition, tomorrowAvgTemp, tomorrowRain);
 
 
     const tomorrowHighLow = document.createElement('div');
@@ -130,7 +141,7 @@ function weatherDisplayContainer() {
     tomorrowLowTemp.setAttribute('class', 'tmrw-dayafter-low-temp');
     const tomorrowLowText = document.createElement('p');
     tomorrowLowText.textContent = 'Low';
-    tomorrowLowContainer.append(tomorrowLowText);
+    tomorrowLowContainer.append(tomorrowLowTemp, tomorrowLowText);
 
     tomorrowHighLow.append(tomorrowHighContainer, tomorrowLowContainer);
     tomorrowWeatherContainer.append(tomorrowTopContainer, tomorrowHighLow);
@@ -150,7 +161,7 @@ function weatherDisplayContainer() {
     const dayAfterTmrwRain = document.createElement('p');
     dayAfterTmrwRain.setAttribute('class', 'tmrw-dayafter-rain');
 
-    dayAfterTmrwTopContainer.append(dayAfterTmrwDate, dayAfterTmrwIcon, dayAfterTmrwAvgTemp, dayAfterTmrwRain);
+    dayAfterTmrwTopContainer.append(dayAfterTmrwDate, dayAfterTmrwIcon, dayAfterTmrwCondition, dayAfterTmrwAvgTemp, dayAfterTmrwRain);
 
     
     const dayAfterTmrwHighLow = document.createElement('div');
@@ -168,7 +179,7 @@ function weatherDisplayContainer() {
     dayAfterTmrwLowTemp.setAttribute('class', 'tmrw-dayafter-low-temp');
     const dayAfterTmrwLowText = document.createElement('p');
     dayAfterTmrwLowText.textContent = 'Low';
-    dayAfterTmrwLowContainer.append(dayAfterTmrwLowTemp,dayAfterTmrwLowText);
+    dayAfterTmrwLowContainer.append(dayAfterTmrwLowTemp, dayAfterTmrwLowText);
 
     dayAfterTmrwHighLow.append(dayAfterTmrwHighContainer, dayAfterTmrwLowContainer);
     dayAfterTmrwWeatherContainer.append(dayAfterTmrwTopContainer, dayAfterTmrwHighLow);

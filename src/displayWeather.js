@@ -20,22 +20,22 @@ function displayWeather(apiData) {
     const todayUV = document.querySelector('#today-uv');
     const todayWind = document.querySelector('#today-wind');
 
-    const today12AMIcon = document.querySelector('[data-hour="1"] img');
-    const today12AMTemp = document.querySelector('[data-hour="1"] p');
-    const today3AMIcon = document.querySelector('[data-hour="2"] img');
-    const today3AMTemp = document.querySelector('[data-hour="2"] p');
-    const today6AMIcon = document.querySelector('[data-hour="3"] img');
-    const today6AMTemp = document.querySelector('[data-hour="3"] p');
-    const today9AMIcon = document.querySelector('[data-hour="4"] img');
-    const today9AMTemp = document.querySelector('[data-hour="4"] p');
-    const today12PMIcon = document.querySelector('[data-hour="5"] img');
-    const today12PMTemp = document.querySelector('[data-hour="5"] p');
-    const today3PMIcon = document.querySelector('[data-hour="6"] img');
-    const today3PMTemp = document.querySelector('[data-hour="6"] p');
-    const today6PMIcon = document.querySelector('[data-hour="7"] img');
-    const today6PMTemp = document.querySelector('[data-hour="7"] p');
-    const today9PMIcon = document.querySelector('[data-hour="8"] img');
-    const today9PMTemp = document.querySelector('[data-hour="8"] p');
+    const today12AMIcon = document.querySelector('[data-hour="0"] img');
+    const today12AMTemp = document.querySelector('[data-hour="0"] p');
+    const today3AMIcon = document.querySelector('[data-hour="1"] img');
+    const today3AMTemp = document.querySelector('[data-hour="1"] p');
+    const today6AMIcon = document.querySelector('[data-hour="2"] img');
+    const today6AMTemp = document.querySelector('[data-hour="2"] p');
+    const today9AMIcon = document.querySelector('[data-hour="3"] img');
+    const today9AMTemp = document.querySelector('[data-hour="3"] p');
+    const today12PMIcon = document.querySelector('[data-hour="4"] img');
+    const today12PMTemp = document.querySelector('[data-hour="4"] p');
+    const today3PMIcon = document.querySelector('[data-hour="5"] img');
+    const today3PMTemp = document.querySelector('[data-hour="5"] p');
+    const today6PMIcon = document.querySelector('[data-hour="6"] img');
+    const today6PMTemp = document.querySelector('[data-hour="6"] p');
+    const today9PMIcon = document.querySelector('[data-hour="7"] img');
+    const today9PMTemp = document.querySelector('[data-hour="7"] p');
 
 
     const tomorrowDate = document.querySelector('#tomorrow-weather .tmrw-dayafter-date');
@@ -55,19 +55,19 @@ function displayWeather(apiData) {
     const dayAfterTmrwLow = document.querySelector('#dayAfter-weather .tmrw-dayafter-low-temp');
     createLocalWeather(apiData)
         .then((data) => {
-            locationName.textContent = data.currentWeather.location.name;
+            locationName.textContent = `${data.currentWeather.location.name},  `;
             locationRegion.textContent = data.currentWeather.location.region;
             locationCountry.textContent = data.currentWeather.location.country;
 
             currentTemp.textContent = `${data.currentWeather.temperature}°F`;
             currentIcon.src = data.currentWeather.icon;
             currentCondition.textContent = data.currentWeather.condition;
-            todayRainChance.textContent = data.currentWeather.percipitation;
+            todayRainChance.textContent = `Rain chance: ${data.currentWeather.percipitation} %`;
 
-            todayFeelsLike.textContent = `${data.currentWeather.feelslike}°F`;
-            todayHumidity.textContent = data.currentWeather.humidity;
-            todayUV.textContent = data.currentWeather.uv;
-            todayWind.textContent = data.currentWeather.windspeed;
+            todayFeelsLike.textContent = `Feels like: ${data.currentWeather.feelslike}°F`;
+            todayHumidity.textContent = `Humidity: ${data.currentWeather.humidity}`;
+            todayUV.textContent = `UV Index: ${data.currentWeather.uv}`;
+            todayWind.textContent = `Windspeed: ${data.currentWeather.windspeed} mph`;
 
             today12AMIcon.src = data.currentWeather.forecast[0].icon;
             today12AMTemp.textContent = `${data.currentWeather.forecast[0].temperature}°F`;
@@ -86,7 +86,7 @@ function displayWeather(apiData) {
             today9PMIcon.src = data.currentWeather.forecast[21].icon;
             today9PMTemp.textContent = `${data.currentWeather.forecast[21].temperature}°F`;
 
-            tomorrowDate.textContent = data.tomorrowWeather.data;
+            tomorrowDate.textContent = data.tomorrowWeather.date;
             tomorrowIcon.src = data.tomorrowWeather.icon;
             tomorrowCondition.textContent = data.tomorrowWeather.condition;
             tomorrowTemp.textContent = `${data.tomorrowWeather.avgTemperature}°F`;

@@ -56,7 +56,7 @@ async function createLocalWeather(apiData) {
             date: weatherData.forecast.forecastday[1].date,
             condition: weatherData.forecast.forecastday[1].day.condition.text,
             icon: `https:${weatherData.forecast.forecastday[1].day.condition.icon}`,
-            percipitation: weatherData.forecast.forecastday[1].day.daily_chance_of_rain,
+            percipitation: `Rain chance: ${weatherData.forecast.forecastday[1].day.daily_chance_of_rain} %`,
             avgTemperature: weatherData.forecast.forecastday[1].day.avgtemp_f,
             minTemperature: weatherData.forecast.forecastday[1].day.mintemp_f,
             maxTemperature: weatherData.forecast.forecastday[1].day.maxtemp_f
@@ -65,12 +65,13 @@ async function createLocalWeather(apiData) {
             date: weatherData.forecast.forecastday[2].date,
             condition: weatherData.forecast.forecastday[2].day.condition.text,
             icon: `https:${weatherData.forecast.forecastday[2].day.condition.icon}`,
-            percipitation: weatherData.forecast.forecastday[2].day.daily_chance_of_rain,
+            percipitation: `Rain chance: ${weatherData.forecast.forecastday[2].day.daily_chance_of_rain} %`,
             avgTemperature: weatherData.forecast.forecastday[2].day.avgtemp_f,
             minTemperature: weatherData.forecast.forecastday[2].day.mintemp_f,
             maxTemperature: weatherData.forecast.forecastday[2].day.maxtemp_f
         }
     };
+    console.log(localWeather);
     return localWeather
 };
 

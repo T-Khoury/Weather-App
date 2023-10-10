@@ -4,15 +4,37 @@
     src: url(./assets/YoungSerif-Regular.ttf)
 }
 
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url(./assets/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+}
+
 body {
     background: url('./assets/noaa-kcvlb727mn8-unsplash.jpg') no-repeat center fixed;
     background-size: cover;
-    font-family: 'Young Serif';
+    font-family: 'Nunito Sans';
+    color: rgb(241, 241, 176);
 }
+
+button {
+    padding: 0;
+    position: absolute;
+    right: 0.1rem;
+}
+
+button img {
+    height: 100%;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+}
+
 
 #content {
     display: grid;
-    grid-template-rows: 5% 45% 5% 45%;
+    grid-template-rows: 10% 45% 5% 40%;
     grid-template-columns: 45% 10% 45%;
     grid-template-areas: 
         "search search search"
@@ -24,20 +46,81 @@ body {
     margin: auto;
 }
 
+#current-temp, #current-icon {
+    display: inline;
+    margin: auto;
+    font-size: 2rem;
+}
+
+#current-condition {
+    font-size: 1.5rem;
+}
+
+
 #input-container {
     text-align: center;
     grid-area: search;
 }
 
+#location-container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 50%;
+    font-size: 2rem;
+}
+
+#location-country {
+    font-size: 1.5rem;
+}
+
+#location-form {
+    height: 50%;
+    width: 40%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#location-name, #location-region {
+    display: inline;
+}
+.tmrw-dayafter-condition {
+    grid-area: condition;
+}
+
+#today-conditions {
+    align-items: center;
+    height: 100%;
+}
+
 #today-hourly-forecast {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    height: 50%;
 }
 
 #today-location-conditions, #today-other-info {
     height: 100%;
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+#today-location-conditions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#today-other-info {
+    padding-right: 1rem;
+    text-align: end;
+}
+
+#today-other-info p {
+    width: 50%;
+}
+
 
 
 #today-top-container {
@@ -46,22 +129,107 @@ body {
     width: 100%;
 }
 
+#today-weather, #tomorrow-weather, #dayAfter-weather {
+    backdrop-filter: blur(30px);
+    border: 2px solid rgb(99, 156, 241);
+}
+
 #today-weather {
     grid-area: today;
-    border: 1px solid black;
-    backdrop-filter: blur(10px);
 }
 
 
 #tomorrow-weather {
     grid-area: tomorrow;
-    border: 1px solid black;
-    
 }
 
 #dayAfter-weather {
     grid-area: dayafter;
-    border: 1px solid black;
 }
+
+.high-low {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hourly-icon {
+    height: 4rem;
+    width: 4rem;
+}
+
+.hourly-temp {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.todayHour {
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: end;
+}
+
+.todayHour :last-child, .hourly-temp {
+    margin: 0;
+}
+
+.tmrw-dayafter-condition {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.tmrw-dayafter-date {
+    grid-area: date;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.tmrw-dayafter-high, .tmrw-dayafter-low {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.tmrw-dayafter-high p, .tmrw-dayafter-low p {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.tmrw-dayafter-rain {
+    font-size: 1.4rem;
+    margin: 0;
+    align-self: end;
+}
+
+.tmrw-dayafter-temp {
+    font-size: 2rem;
+    margin: 0;
+    align-self: end;
+}
+
+.tmrw-dayafter-top-container {
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 60% 30%;
+    grid-template-areas:
+        "date date date"
+        "icon temp percipitation"
+        "condition . .";
+    justify-items: center;
+}
+
+.tmrw-dayafter-top-container img {
+    /* height: 7rem; */
+    height: 120%;
+}
+
 
 
