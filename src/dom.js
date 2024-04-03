@@ -41,13 +41,18 @@ function weatherDisplayContainer() {
 
     const todayConditions = document.createElement('div');
     todayConditions.setAttribute('id', 'today-conditions');
+    const todayConditionsTop = document.createElement('div');
+    todayConditionsTop.setAttribute('id', 'today-conditions-top');
     const currentTemp = document.createElement('p');
     currentTemp.setAttribute('id', 'current-temp');
     const currentIcon = document.createElement('img');
     currentIcon.setAttribute('id', 'current-icon');
     const currentCondition = document.createElement('p');
     currentCondition.setAttribute('id', 'current-condition');
-    todayConditions.append(currentTemp, currentIcon, currentCondition);
+    
+
+    todayConditionsTop.append(currentTemp, currentIcon);
+    todayConditions.append(todayConditionsTop, currentCondition);
 
     todayLocationandConditions.append(todayLocation, todayConditions);
 

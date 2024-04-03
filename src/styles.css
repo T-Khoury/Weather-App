@@ -49,10 +49,11 @@ input {
 #current-temp, #current-icon {
     display: inline;
     margin: auto;
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 
 #current-condition {
+    margin: 0;
     font-size: 1.5rem;
 }
 
@@ -60,6 +61,7 @@ input {
 #input-container {
     text-align: center;
     grid-area: search;
+    display: flex;
 }
 
 #location-container {
@@ -90,8 +92,11 @@ input {
 }
 
 #today-conditions {
-    align-items: center;
     height: 100%;
+}
+
+#today-conditions-top {
+    display: flex;
 }
 
 #today-hourly-forecast {
@@ -114,11 +119,13 @@ input {
 
 #today-other-info {
     padding-right: 1rem;
+    padding-top: 1rem;
     text-align: end;
 }
 
 #today-other-info p {
     width: 50%;
+    margin: 0;
 }
 
 
@@ -165,7 +172,6 @@ input {
 }
 
 .todayHour {
-    height: 80%;
     text-align: center;
     display: flex;
     flex-direction: column;
